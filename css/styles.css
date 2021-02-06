@@ -26,26 +26,61 @@ White: hsl(0, 0%, 100%)
 
 - Font size: 15px
 
-### Font
-
-- Family: [Spartan](https://fonts.google.com/specimen/Spartan)
-- Weights: 400, 500, 700
  */
+ body{
+  font-family: 'Spartan', sans-serif;
+  background-image: url(/assets/images/bg-pattern-top-mobile.svg);
+  background-repeat: no-repeat;
+  
+ }
+ 
 .header{
-  color: hsl(300, 43%, 22%);
-  text-align: center;
+  margin-top: 70px;
+ text-align: center;
+ padding-left: 10px;
+padding-right: 10px;
+
 }
 .header__title{
-  padding-left: 50px;
-  padding-right:50px;
+  color: hsl(300, 43%, 22%);
+  font-weight: 700;
+  font-size: 32px;
 }
 .header__subtitle{
-  padding-left: 40px;
-  padding-right:40px;
+  
+  font-size: 15px;
+  font-weight: 500;
+  color:hsl(303, 10%, 53%) ;
+  line-height: 1.5em;
 }
 
-
-
+.rated{
+  width: 300px;
+  height: 70px;
+  background-color: hsl(300, 24%, 96%);
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.rated__star{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url(/assets/images/icon-star.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px 4px 5px 4px;
+  
+}
+.rated__text{
+  color:hsl(300, 43%, 22%);
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0;
+}
 
 
 
