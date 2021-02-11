@@ -1,44 +1,49 @@
-/* # Front-end Style Guide
 
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-### Primary
-
-Very Dark Magenta: hsl(300, 43%, 22%)
-Soft Pink: hsl(333, 80%, 67%)
-
-### Neutral
-
-Dark Grayish Magenta: hsl(303, 10%, 53%)
-Light Grayish Magenta: hsl(300, 24%, 96%)
-White: hsl(0, 0%, 100%)
-
-## Typography
-
-### Body Copy
-
-- Font size: 15px
-
- */
+body::before{
+  content: url(/assets/images/bg-pattern-top-mobile.svg);
+  position: absolute;
+  top: 0;
+ }
+ body::after{
+   content: url(/assets/images/bg-pattern-bottom-mobile.svg);
+   position: absolute;
+   bottom: -810px;
+   right: 0;
+  }
+  @media screen and (min-width: 768px){
+    body::before{
+      content: url(/assets/images/bg-pattern-top-desktop.svg);
+      position: absolute;
+      top: 0;
+     }
+     body::after{
+       content: url(../assets/images/bg-pattern-bottom-desktop.svg);
+       position: absolute;
+       bottom: -400px;
+       right: 0;
+      }
+  }
  body{
   font-family: 'Spartan', sans-serif;
-  background-image: url(/assets/images/bg-pattern-top-mobile.svg);
-  background-repeat: no-repeat;
  }
+
+ @media screen and (min-width: 768px){
+   body{
+     max-width: 1440px;
+     min-height:100vh;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(2,400px);
+   }
+ }
+
 /* HEADER */
+
 .header{
   margin-top: 70px;
- text-align: center;
- padding-left: 10px;
-padding-right: 10px;
-
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .header__title{
   color: hsl(300, 43%, 22%);
@@ -52,6 +57,18 @@ padding-right: 10px;
   color:hsl(303, 10%, 53%) ;
   line-height: 1.5em;
 }
+@media screen and (min-width: 768px){
+  .header{
+    width: 400px;
+    margin-top: 70px;
+    text-align: left;
+    padding-left: 120px;
+    grid-column: 1/2;
+  }
+  .header__title{
+    font-size: 45px;
+  }
+}
 
 /* RATED */
 
@@ -59,10 +76,10 @@ padding-right: 10px;
   margin-top: 40px;
 }
 .rated{
-  width: 330px;
-  height: 75px;
   background-color: hsl(300, 24%, 96%);
   margin: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-radius: 10px;
   text-align: center;
 }
@@ -78,21 +95,78 @@ padding-right: 10px;
 .rated__text{
   color:hsl(300, 43%, 22%);
   font-weight: bold;
-  font-size: 13px;
-  margin: 0;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+@media screen and (min-width: 768px){
+  .section__rated{
+    margin-top: 80px;
+    grid-column: 3/4;
+  }
+  .rated{
+    width: 440px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .rated:first-child {
+    left: -240px;
+  }
+  .rated:nth-child(2) {
+    left: -190px;
+  }
+  .rated:last-child {
+    left: -140px;
+  }
+  .rated__star{
+    margin-right: 2px;
+  }
+  .rated__star:first-child {
+    margin-left: 25px;
+  }
+  .rated__text{
+    margin-bottom:auto;
+    margin-top: auto;
+    padding-left: 35px;
+  }
 }
 
 /* USERS */
 
 .section__users{
-  margin-top:50px;
-  
+  margin-top:50px;  
 }
 .users{
   background-color: hsl(300, 43%, 22%);
   border-radius: 10px;
   width: 330px;
   margin:auto auto 15px auto;
+}
+@media screen and (min-width: 768px){
+  .section__users{
+    grid-column: 1/4;
+    grid-row: 2;
+    display: flex;
+  }
+  .users{
+    width: 350px;
+    position: relative;
+    }
+  .users:first-child{
+    top:-100px;
+    left: 60px;
+  }
+  .users:nth-child(2){
+    top: -85px;
+    right:20px;
+  }
+  .users:last-child{
+    top: -70px;
+    right: 100px;
+  }
 }
 .users__container{
   display: flex;
@@ -131,10 +205,10 @@ padding-right: 10px;
 
 
 
-
-
+/* FOOTER */
 
   .attribution {
+    margin-top: auto;
     font-size: 11px;
     text-align: center;
   }
